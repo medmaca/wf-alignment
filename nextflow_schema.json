@@ -46,7 +46,8 @@
           "type": "string",
           "description": "Path to a CSV file containing expected counts as a control.",
           "help_text": "The expected counts CSV file must contain columns named 'reference' and 'expected_counts' in order to be valid. the 'reference' column should contain names matching the names of reference sequences within the fasta files provided using --references.",
-          "format": "file-path"
+          "format": "file-path",
+          "pattern": "^\\S+\\.csv$"
         }
       }
     },
@@ -77,7 +78,6 @@
       "properties": {
         "out_dir": {
           "type": "string",
-          "default": "output",
           "description": "Directory for output of all workflow results.",
           "format": "directory-path"
         },
@@ -86,7 +86,10 @@
           "description": "Optional prefix attached to each of the output filenames.",
           "help_text": "Output filename format will be `<prefix>-filename.ext`."
         }
-      }
+      },
+      "required": [
+        "out_dir"
+      ]
     },
     "advanced_options": {
       "title": "Advanced options",
