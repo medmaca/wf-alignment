@@ -1,5 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  // "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://raw.githubusercontent.com/epi2me-labs/wf-alignment/master/nextflow_schema.json",
   "title": "epi2me-labs/wf-alignment pipeline parameters",
   "description": "Align Nanopore reads and visualize mapping statistics.",
@@ -102,7 +103,10 @@
           "default": "dna",
           "description": "Pre-defined parameter sets for `minimap2`, covering most common use cases.",
           "help_text": "Available parameter sets are: 'dna' (`-ax map-ont`), 'rna' (`-ax splice -uf`).",
-          "enum": ["dna", "rna"]
+          "enum": [
+            "dna",
+            "rna"
+          ]
         },
         "minimap_args": {
           "type": "string",
